@@ -18,6 +18,12 @@
             <h1>ToDo List</h1>
         </header>
 
+        <?php
+            if (isset($deletedTodo)) {
+                echo "Task Completed!<br><br>";
+            }
+        ?>
+
         <section aria-label="List of To Do Items">
             <?php require("database.php"); ?>
 
@@ -69,17 +75,19 @@
 
         </section>
 
-        <section aria-label="Add To Do Item">
-            <h2>Add Item</h2>
+        <section aria-label="Add To Do Item" class="addToDo">
+            <h2 class="addToDo--title">Add Item</h2>
             <!-- Form -->
             <form action="." method="POST">
-                <div class="form--group">
-                    <input type="text" name="newTitle" id="newTitle" maxlength="20" placeholder="Title" autocomplete="off" aria-label="Enter a title" class="form--field" aria-required="true" required>
-                    <label for="newTitle">Title</label>
-                </div>
-                <div class="form--group">
-                    <input type="text" name="newDescription" id="newDescription" maxlength="50" placeholder="Description" autocomplete="off" aria-label="Enter a description" class="form--field" aria-required="true" required>
-                    <label for="newDescription">Description</label>
+                <div class="form--container">
+                    <div class="form--group">
+                        <input type="text" name="newTitle" id="newTitle" maxlength="20" placeholder="Title" autocomplete="off" aria-label="Enter a title" class="form--field" aria-required="true" required>
+                        <label for="newTitle" class="form--label">Title</label>
+                    </div>
+                    <div class="form--group">
+                        <input type="text" name="newDescription" id="newDescription" maxlength="50" placeholder="Description" autocomplete="off" aria-label="Enter a description" class="form--field" aria-required="true" required>
+                        <label for="newDescription" class="form--label">Description</label>
+                    </div>
                 </div>
                 <button type="submit" class="form--submit">Add Item</button>
             </form>
