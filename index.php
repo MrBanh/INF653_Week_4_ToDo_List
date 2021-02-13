@@ -30,7 +30,7 @@
             <!-- Handle the logic to insert todo item into database -->
             <?php
                 if ($newTitle && $newDescription) {
-                    $query = "INSERT INTO ToDoItems (Title, Description)
+                    $query = "INSERT INTO todoitems (Title, Description)
                                 VALUES (:newTitle, :newDescription)";
                     $statement = $db->prepare($query);
                     $statement->bindValue(':newTitle', $newTitle);
@@ -42,7 +42,7 @@
 
             <!-- Handle the logic to get all todo items from database -->
             <?php
-                $query = "SELECT * FROM ToDoItems ORDER BY ItemNum ASC";
+                $query = "SELECT * FROM todoitems ORDER BY ItemNum ASC";
                 $statement = $db->prepare($query);
                 $statement->execute();
                 $results = $statement->fetchAll();        // fetch all results in table

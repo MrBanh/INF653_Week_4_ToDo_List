@@ -2,7 +2,7 @@
 	&--title {
 		width: 100%;
 		font-weight: bold;
-		font-size: 1.125rem;
+		font-size: 1.8rem;
 		color: $secondary-color;
 	}
 }
@@ -18,14 +18,14 @@ form {
 		position: relative;
 
 		&:nth-child(2) {
-			margin-top: .5rem;
+			margin-top: .8rem;
 		}
 	}
 
 	.form--field {
 		font-family: inherit;
 		width: 100%;
-		padding: .5rem;
+		padding: .8rem;
 		background: transparent;
 		border-width: thin;
 
@@ -48,13 +48,13 @@ form {
 		min-height: 48px;
 		align-self: stretch;
 		word-wrap: break-word;
-		margin-left: .5rem;
+		margin-left: .8rem;
 		background-color: $bg-color;
 		color: white;
 		font-weight: bold;
 		border-style: none;
 		cursor: pointer;
-		border-radius: 10px;
+		border-radius: 1rem;
         transition: transform 150ms linear;
 
         &:focus,
