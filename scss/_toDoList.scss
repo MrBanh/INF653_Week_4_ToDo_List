@@ -1,0 +1,23 @@
+.toDoList {
+	border: 2px solid $border-color;
+	width: 100%;
+	margin-bottom: 1.6rem;
+	max-height: calc(100% - 120px);
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE 10+ */
+	&::-webkit-scrollbar {
+        display: none;
+		width: 0px;
+		background: transparent; /* Chrome/Safari/Webkit */
+	}
+
+	h1 {
+		color: white;
+		background-color: $bg-color;
+		padding: .8rem .4rem;
+		font-weight: 500;
+		position: sticky;
+		top: 0;
+	}
+}

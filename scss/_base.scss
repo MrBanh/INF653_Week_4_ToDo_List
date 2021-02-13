@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
 
-html {
+html, body {
 	font-family: 'Roboto', sans-serif;
     color: $primary-color;
+    height: 100%;
+    width: 100%;
 }
 
 main {
     font-size: 1.6rem;
     padding: 1.6rem;
+    height: inherit;
 }

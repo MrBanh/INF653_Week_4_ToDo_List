@@ -14,17 +14,15 @@
 </head>
 <body>
     <main>
-        <header>
-            <h1>ToDo List</h1>
-        </header>
-
         <?php
             if (isset($deletedTodo)) {
                 echo "Task Completed!<br><br>";
             }
         ?>
 
-        <section aria-label="List of To Do Items">
+        <section aria-label="List of To Do Items" class="toDoList">
+            <h1>ToDo List</h1>
+
             <?php require("database.php"); ?>
 
             <!-- Handle the logic to insert todo item into database -->
@@ -50,25 +48,27 @@
             ?>
 
             <?php if (!empty($results)) { ?>
-                <ul>
-                    <?php foreach ($results as $todo) {
-                        $itemNum = $todo['ItemNum'];
-                        $title = $todo['Title'];
-                        $description = $todo['Description'];
-                    ?>
-                        <li class="todo--item" id="todo--item-<?php echo $itemNum; ?>">
-                            <div class="todo--container">
-                                <p class="todo--title" id="todo--title-<?php echo $itemNum; ?>"><?php echo $title; ?></p>
-                                <p class="todo--description" id="todo--description-<?php echo $itemNum; ?>"><?php echo $description; ?></p>
-                            </div>
+                <div class="toDoList--container">
+                    <ul>
+                        <?php foreach ($results as $todo) {
+                            $itemNum = $todo['ItemNum'];
+                            $title = $todo['Title'];
+                            $description = $todo['Description'];
+                        ?>
+                            <li class="todo--item" id="todo--item-<?php echo $itemNum; ?>">
+                                <div class="todo--container">
+                                    <p class="todo--title" id="todo--title-<?php echo $itemNum; ?>"><?php echo $title; ?></p>
+                                    <p class="todo--description" id="todo--description-<?php echo $itemNum; ?>"><?php echo $description; ?></p>
+                                </div>
 
-                            <form action="delete_todo.php" method="POST" class="todo--delete">
-                                <input type="hidden" name="ItemNum" value="<?php echo $itemNum; ?>">
-                                <button class="todo--delete--btn">❌</button>
-                            </form>
-                        </li>
-                    <?php } ?>
-                </ul>
+                                <form action="delete_todo.php" method="POST" class="todo--delete">
+                                    <input type="hidden" name="ItemNum" value="<?php echo $itemNum; ?>">
+                                    <button class="todo--delete--btn" aria-label="Delete to do">❌</button>
+                                </form>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
             <?php } else { ?>
                 <p>No to do list items exist yet.</p>
             <?php } ?>

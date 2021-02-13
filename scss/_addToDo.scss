@@ -28,6 +28,7 @@ form {
 		padding: .8rem;
 		background: transparent;
 		border-width: thin;
+		border-color: $border-color;
 
 		&:focus {
 			outline-color: $bg-color;
@@ -47,7 +48,7 @@ form {
 		min-width: 48px;
 		min-height: 48px;
 		align-self: stretch;
-		word-wrap: break-word;
+		overflow-wrap: break-word;
 		margin-left: .8rem;
 		background-color: $bg-color;
 		color: white;
@@ -55,13 +56,13 @@ form {
 		border-style: none;
 		cursor: pointer;
 		border-radius: 1rem;
-        transition: transform 150ms linear;
+		transition: transform 150ms linear;
 
-        &:focus,
-        &:hover {
-            transform: scale(1.1);
-            outline: none;
-            box-shadow: 0px 1px 5px $primary-color;
-        }
+		&:focus,
+		&:hover {
+			transform: scale(1.1);
+			outline: none;
+			box-shadow: 0px 1px 5px $primary-color;
+		}
 	}
 }
