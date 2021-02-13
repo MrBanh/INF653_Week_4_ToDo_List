@@ -35,6 +35,8 @@
                     $statement->bindValue(':newDescription', $newDescription);
                     $statement->execute();
                     $statement->closeCursor();
+
+                    header("Location: .");
                 }
             ?>
 
@@ -70,7 +72,7 @@
                     </ul>
                 </div>
             <?php } else { ?>
-                <p>No to do list items exist yet.</p>
+                <p class="message">No to do list items exist yet.</p>
             <?php } ?>
 
         </section>

@@ -14,5 +14,5 @@ if ($itemNum) {
 
 $deletedTodo = true;
 
-include("index.php");
+header("Location: .");
 ?>
